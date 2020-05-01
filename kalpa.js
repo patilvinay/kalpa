@@ -7,9 +7,8 @@ function commaSeparatedList(value, dummyPrevious) {
   }
 
 program
-  .arguments('<cmd>')
-  .option('-f, --file <type>', 'Add the specified type of cheese', 'blue')
-  .option('-s, --set <type>', 'Add the specified type of cheese',  commaSeparatedList)
+  .arguments('<filename>')
+  .option('-s, --set <type>', 'Set the variable value here, this has highest priority over everything',  commaSeparatedList)
   .action(function (cmd, env) {
     cmdValue = cmd;
     envValue = env;
@@ -17,4 +16,3 @@ program
     console.log(program.set);
   })
   .parse(process.argv);
-if (program.file === undefined) console.log('no file');
