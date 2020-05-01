@@ -3,7 +3,7 @@ const fs = require('./lib/fs');
 const _fs = require('fs');
 let ejs = require('ejs');
 const path = require('path')
-
+const scaffold = require("./lib/scaffold/scaffold.js")
 let projects = YAML.load('tasks.yml').project;
 
 for (let index = 0; index < projects.length; index++) {
@@ -15,24 +15,8 @@ for (let index = 0; index < projects.length; index++) {
     let jobs = prj.jobs;
     console.log("Total jobs %s", jobs.length)
     for (i = 0; i < jobs.length; i++) {
-
-        let job = jobs[i]
-        nativeObject = YAML.load(job.input);
-
-        var str = _fs.readFileSync(job.template, {
-                encoding: 'utf8',
-                flag: 'r'});
-
-            str = ejs.render(str, {
-                entity: nativeObject.entity
-            }, null);
-
-            console.log(str);
-            writePath = path.join(prj.name, prj.jobs[i].dir, prj.jobs[i].output);
-            console.log("writing in %s", writePath);
-            fs.writeFileSync(writePath, str);
-
-        }
+       let job = jobs[i]
+       scaffold.create(job)
     }
 
 
@@ -41,3 +25,4 @@ for (let index = 0; index < projects.length; index++) {
     // str= ejs.render(str, {entity:nativeObject.entity}, null);
     // console.log(str)
     // fs.writeFileSync('model.js', str);
+}
