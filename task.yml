@@ -1,4 +1,0 @@
-job:
-   - input: entity.yaml
-     template: model-template.ejs.js
-     output: entity.js

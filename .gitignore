@@ -1,0 +1,4 @@
+node_modules
+.vscode
+RestroMan
+package-lock.json
