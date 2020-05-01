@@ -4,6 +4,8 @@ const _fs = require('fs');
 let ejs = require('ejs');
 const path = require('path')
 const scaffold = require("./lib/scaffold/scaffold.js")
+const chalk = require('chalk');
+
 let projects = YAML.load('tasks.yml').project;
 
 for (let index = 0; index < projects.length; index++) {
@@ -16,8 +18,9 @@ for (let index = 0; index < projects.length; index++) {
     console.log("Total jobs %s", jobs.length)
     for (i = 0; i < jobs.length; i++) {
        let job = jobs[i]
-       console.log(job.name)
-       scaffold.create(job)
+       console.log(chalk.blue("**************-- Executing Job:["+ job.name +"] --**************"));
+       var ret=scaffold.create(job)
+       console.log (chalk.red(ret))
     }
 
 

@@ -17,6 +17,7 @@
   "author": "Vinay Patil",
   "license": "Apache-2.0",
   "dependencies": {
+    "chalk": "^4.0.0",
     "ejs": "^3.1.2",
     "yamljs": "^0.3.0"
   }

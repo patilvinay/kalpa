@@ -7,3 +7,9 @@ project:
           dest: businessModel.js
           template: ./templates/sequelizeModel.ejs.js
           dir: models
+     - name: Generating business entity
+       scaffold:
+          src: ./spec/business/businessMasterEntity.yaml
+          dest: businessModel1.js
+          template: ./templates/sequelizeModel.ejs.js
+          dir: model         
