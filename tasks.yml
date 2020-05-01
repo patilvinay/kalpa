@@ -1,7 +1,7 @@
 project:
  - name: RestroMan
    jobs:
-     - name: Generating
+     - name: Generating business entity
        scaffold:
           src: ./spec/business/businessMasterEntity.yaml
           dest: businessModel.js

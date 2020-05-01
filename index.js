@@ -16,6 +16,7 @@ for (let index = 0; index < projects.length; index++) {
     console.log("Total jobs %s", jobs.length)
     for (i = 0; i < jobs.length; i++) {
        let job = jobs[i]
+       console.log(job.name)
        scaffold.create(job)
     }
 
