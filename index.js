@@ -19,7 +19,7 @@ for (let index = 0; index < projects.length; index++) {
     for (i = 0; i < jobs.length; i++) {
        let job = jobs[i]
        console.log(chalk.blue("**************-- Executing Job:["+ job.name +"] --**************"));
-       var ret=scaffold.create(job)
+       var ret=scaffold.process(job)
        console.log (chalk.red(ret))
     }
 
