@@ -1,5 +1,4 @@
-  
-// const commander = require('commander'); // (normal include)
+#!/usr/bin/env node 
 const commander = require('commander'); // include commander in git clone of commander repo
 const program = new commander.Command();
 function commaSeparatedList(value, dummyPrevious) {
