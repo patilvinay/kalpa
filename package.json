@@ -1,8 +1,8 @@
 {
   "name": "kalpa",
   "version": "0.1.2",
-  "description": "Scafolding tool",
-  "main": "index.js",
+  "description": "Scaffolding tool",
+  "main": "lib/kalpa/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,7 +14,8 @@
     "kalpa": "./kalpa.js"
   },
   "keywords": [
-    "scafolding",
+    "scaffolding",
+    "automation",
     "tool"
   ],
   "author": "Vinay Patil",
