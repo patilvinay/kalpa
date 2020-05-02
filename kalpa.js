@@ -13,5 +13,7 @@ program
     envValue = env;
     console.log(cmd)
     console.log(program.set);
+
+    
   })
   .parse(process.argv);
