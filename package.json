@@ -2,10 +2,14 @@
   "name": "kalpa",
   "version": "0.1.2",
   "description": "Scaffolding tool",
-  "main": "lib/kalpa/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "lib",
+    "lib/kalpa"
+  ],
   "repository": {
     "type": "git",
     "url": "kalpa"
