@@ -27,9 +27,9 @@
   "dependencies": {
     "chalk": "^4.0.0",
     "commander": "^5.1.0",
-    "ejs": "^3.1.2",
+    "execa": "^4.0.0",
     "kalpa-file": "^0.1.2",
-    "mkdirp": "^1.0.4",
-    "yamljs": "^0.3.0"
+    "rxjs": "^6.5.5",
+    "spinnies": "^0.5.1"
   }
 }
