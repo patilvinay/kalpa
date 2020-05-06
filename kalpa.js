@@ -22,10 +22,8 @@ program
     globalData.playbookDir=path.resolve('.')
     globalData.playbookFile= cmd
     globalData.playbookFileWitAbsolutePath = path.join(globalData.playbookDir, cmd); 
-    //nsole.log(playbook.__data.playbookFileWitAbsolutePath)
     playbook.rootData = yaml.load(globalData.playbookFileWitAbsolutePath);
-    
-    //console.log(playbook.__data.playbookdir)
+    //nsole.log(kalpa)
     kalpa.process(playbook,globalData);
 
   })

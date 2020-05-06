@@ -29,7 +29,10 @@
     "commander": "^5.1.0",
     "execa": "^4.0.0",
     "kalpa-file": "^0.1.2",
+    "lodash": "^4.17.15",
     "rxjs": "^6.5.5",
-    "spinnies": "^0.5.1"
+    "spinnies": "^0.5.1",
+    "winston": "^3.2.1",
+    "yamljs": "^0.3.0"
   }
 }
