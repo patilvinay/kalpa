@@ -21,9 +21,17 @@ program
     playbook.__data={};
     globalData.playbookDir=path.resolve('.')
     globalData.playbookFile= cmd
-    globalData.playbookFileWitAbsolutePath = path.join(globalData.playbookDir, cmd); 
-    playbook.rootData = yaml.load(globalData.playbookFileWitAbsolutePath);
+    try{
+      globalData.playbookFileWitAbsolutePath = path.join(globalData.playbookDir, cmd); 
+      playbook.rootData = yaml.load(globalData.playbookFileWitAbsolutePath);
+    }catch(err){
+      kalpa.logger.error("Error loading file %s",globalData.playbookFile)
+      kalpa.logger.error(err.code)
+      return 1;
+      
+    }
     //nsole.log(kalpa)
+
     kalpa.process(playbook,globalData);
 
   })
