@@ -2,7 +2,7 @@
   "name": "kalpa",
   "version": "0.1.4",
   "description": "Scaffolding tool",
-  "main": "index.js",
+  "main": "lib/kalpa/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "semantic-release": "semantic-release"
