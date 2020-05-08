@@ -1,4 +1,7 @@
-# kalpa [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# kalpa [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![License][apache-image]][apache-url]
+
+
+
 # kalpa
 scaffolding tool 
 
@@ -15,3 +18,5 @@ scaffolding tool
 [daviddm-url]: https://david-dm.org/patilvinay/kalpa
 [coveralls-image]: https://coveralls.io/repos/patilvinay/kalpa/badge.svg
 [coveralls-url]: https://coveralls.io/r/patilvinay/kalpa
+[apache-image]:https://img.shields.io/badge/License-Apache%202.0-blue.svg
+[apache-url]:https://opensource.org/licenses/Apache-2.0
