@@ -4,7 +4,7 @@
   "description": "Scaffolding tool",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "files": [
     "lib",
@@ -46,5 +46,5 @@
     "eslint-plugin-promise": "^4.2.1",
     "lint-staged": "^10.0.0",
     "npm-run-all": "^4.1.5"
-   }
+  }
 }
