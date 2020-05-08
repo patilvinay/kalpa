@@ -10,6 +10,7 @@
   "files": [
     "lib",
     "lib/kalpa",
+    "example",
     "index.js"
   ],
   "repository": {
