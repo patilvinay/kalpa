@@ -1,12 +1,11 @@
 # kalpa [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> This is kalpa shell module
 # kalpa
 scaffolding tool 
 
+
 ## Getting started
-1. Input all the configuration data from task.yml
-2. Run node index.js
-3. The code is generated as per the inputs in the task file
+1. npm install kalpa -g
+2. kalpa <kalpa-playbook.yml>
 
 [npm-image]: https://badge.fury.io/js/kalpa.svg
 [npm-url]: https://npmjs.org/package/kalpa
