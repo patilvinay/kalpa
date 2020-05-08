@@ -1,5 +1,5 @@
-#!/usr/bin/env node 
-const commander = require('commander'); // include commander in git clone of commander repo
+#!/usr/bin/env node
+const commander = require('commander');
 const yaml= require("yamljs");
 const path = require ('path')
 const kalpa = require("kalpa")
@@ -14,21 +14,19 @@ program
   .action(function (cmd, env) {
     cmdValue = cmd;
     envValue = env;
-    //console.log(cmd)
-    //nsole.log(program.set);
     let playbook={}
     let globalData={}
     playbook.__data={};
     globalData.playbookDir=path.resolve('.')
     globalData.playbookFile= cmd
     try{
-      globalData.playbookFileWitAbsolutePath = path.join(globalData.playbookDir, cmd); 
+      globalData.playbookFileWitAbsolutePath = path.join(globalData.playbookDir, cmd);
       playbook.rootData = yaml.load(globalData.playbookFileWitAbsolutePath);
     }catch(err){
       kalpa.logger.error("Error loading file %s",globalData.playbookFile)
       kalpa.logger.error(err.code)
       return 1;
-      
+
     }
     //nsole.log(kalpa)
 
