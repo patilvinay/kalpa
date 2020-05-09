@@ -36,6 +36,7 @@
     "kalpa-file": "^0.1.2",
     "lodash": "^4.17.15",
     "rxjs": "^6.5.5",
+    "signale": "^1.4.0",
     "winston": "^3.2.1",
     "yamljs": "^0.3.0"
   },
@@ -72,5 +73,18 @@
       "npm run lint:fix",
       "git add"
     ]
+  },
+  "signale": {
+    "displayScope": true,
+    "displayBadge": true,
+    "displayDate": false,
+    "displayFilename": false,
+    "displayLabel": false,
+    "displayTimestamp": false,
+    "underlineLabel": true,
+    "underlineMessage": false,
+    "underlinePrefix": false,
+    "underlineSuffix": false,
+    "uppercaseLabel": false
   }
 }
