@@ -1,0 +1,33 @@
+testing:
+  - param:
+      kalpa:
+        - name: Executing series for RestroMan
+          play:
+          - kalpa-tester:
+                A: "A"
+                B:
+                  C: "A"
+
+    expect:
+        A: "A"
+        B:
+          C: "A"
+
+
+  - param:
+      vars:
+        X: "A"
+      kalpa:
+        - name: Executing series for RestroMan
+          play:
+          - kalpa-tester:
+                A: "A"
+                B:
+                  C: "A"
+
+    expect:
+      B:
+        C: "A"
+      A: "A"
+
+

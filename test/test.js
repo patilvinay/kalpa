@@ -1,28 +1,17 @@
-YAML = require('yamljs');
-const fs = require('./lib/fs');
-const _fs = require('fs');
-let ejs = require('ejs');
-const path = require('path')
-const kfile=require("kalpa-file")
-const scaffold = require("./lib/scaffold/scaffold.js")
-yaml= require('./lib/yaml/yaml')
-const chalk = require('chalk');
+const test=require("kalpa-tester")
+const yaml=require("yamljs")
+const path = require ("path")
+const kalpa=require("kalpa")
+let obj=yaml.load("test.yaml").testing;
+//console.log(testData)
 
-//let playbook = YAML.load('examples/file.yml');
-let ret =yaml.load('examples/file.yml')
-console.log(ret.code)
-let playbook=ret.obj
-
-if(playbook !=undefined)
+for(let i in obj)
 {
-for (let index = 0; index < playbook.length; index++) {
-
-
-    //******************************Creates Project directory ******************************************** */ 
-    let chapter = playbook[index]
-    let jobs = chapter.jobs;
-    console.log("Playing chapter %s", chapter.name)
-   
-
-}
+  let testData=obj[i]
+  //console.log(testData)
+  let result=test.test(testData.param,testData.expect);
+  if(result)
+    console.log("test passed")
+  else
+     console.log("test failed")
 }
