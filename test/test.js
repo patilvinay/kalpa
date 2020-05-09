@@ -1,3 +1,4 @@
+"use strict"
 const test=require("kalpa-tester")
 const yaml=require("yamljs")
 const path = require ("path")
@@ -13,5 +14,5 @@ for(let i in obj)
   if(result)
     console.log("test passed")
   else
-     console.log("test failed")
+    console.log("test failed")
 }
