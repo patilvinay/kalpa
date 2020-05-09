@@ -10,6 +10,9 @@ scaffolding tool
 1. npm install kalpa -g
 2. kalpa <kalpa-playbook.yml>
 
+### Style guide
+[Airbnb style-guide](https://github.com/airbnb/javascripthttps://github.com/airbnb/javascript)
+
 [npm-image]: https://badge.fury.io/js/kalpa.svg
 [npm-url]: https://npmjs.org/package/kalpa
 [travis-image]: https://travis-ci.com/patilvinay/kalpa.svg?branch=master
