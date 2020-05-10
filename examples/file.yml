@@ -1,7 +1,0 @@
-    - name: RestroMan
-      jobs:
-        - name: Creating Directory
-          file:
-             src: ./spec/business/businessMasterEntity.yaml
-             action: mkdir
-   
