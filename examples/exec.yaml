@@ -1,7 +1,7 @@
 kalpa:
   - play:
       - name: Create a file foo.txt
-        kalpa-execa1:
+        kalpa-execa:
           cmd: touch
           opts:
             - foo.txt
