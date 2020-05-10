@@ -30,12 +30,8 @@
   "author": "Vinay Patil",
   "license": "Apache-2.0",
   "dependencies": {
-    "chalk": "^4.0.0",
     "commander": "^5.1.0",
-    "execa": "^4.0.0",
-    "kalpa-file": "^0.1.2",
     "lodash": "^4.17.15",
-    "rxjs": "^6.5.5",
     "signale": "^1.4.0",
     "winston": "^3.2.1",
     "yamljs": "^0.3.0"
