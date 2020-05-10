@@ -1,14 +1,13 @@
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![License][apache-image]][apache-url]
 
-# Kalpa (WIP)
+# Kalpa 
 
 Automation Tool, programmed through descriptive yml language,
 
 ## Getting started
 
-1. npm install kalpa -g
-2. npm install kalpa-execa -g
-3. kalpa <playbook.yml>
+1. npm install kalpa kalpa-execa -g
+2. kalpa <playbook.yml>
 
 ### example playbook.yml
 
