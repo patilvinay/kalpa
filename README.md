@@ -22,15 +22,22 @@ kalpa:
             - foo.txt
       - name: Downloading a file
         kalpa-execa:
-          cmd: wget
+          cmd: curl
           opts:
             - https://wordpress.org/latest.zip
+            - -olatest.zip
       - name: Uncompress a file
         kalpa-execa:
           cmd: unzip
           opts:
             - -o
             - latest.zip
+      - name: Deleting latest.zip
+        kalpa-execa:
+          cmd: rm
+          opts:
+            - latest.zip
+            - -f
 ```
 
 ### Style guide
