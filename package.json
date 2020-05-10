@@ -37,6 +37,7 @@
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
+    "@semantic-release/github": "^7.0.5",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
