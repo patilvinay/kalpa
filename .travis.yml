@@ -11,7 +11,7 @@ jobs:
         - "lts/*"
     - stage: npm:publish
       language: node_js
-      before_install: skip
+      before_install: npm install
       install: skip
       script: npm run semantic-release
       if: commit_message =~ /{{publish}}/
