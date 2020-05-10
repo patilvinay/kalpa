@@ -15,7 +15,9 @@ RUN npm install kalpa kalpa-execa -g
 # WORKDIR /home/
 # RUN git clone https://github.com/patilvinay/kalpa.git
 # WORKDIR /home/kalpa
+# RUN git checkout WIP
 # RUN npm link
+# RUN npm link kalpa-execa
 
 
 WORKDIR /home
