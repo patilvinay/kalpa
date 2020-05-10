@@ -11,6 +11,8 @@ jobs:
         - "lts/*"
     - stage: npm:publish
       language: node_js
+      node_js:
+        - v12
       before_install: npm install
       install: skip
       script: npm run semantic-release
