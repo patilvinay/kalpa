@@ -1,0 +1,18 @@
+kalpa:
+  - play:
+      - name: Create a file foo.txt
+        kalpa-execa:
+          cmd: touch
+          opts:
+            - foo.txt
+      - name: Downloading a file
+        kalpa-execa:
+          cmd: wget
+          opts:
+            - https://wordpress.org/latest.zip
+      - name: Uncompress a file
+        kalpa-execa:
+          cmd: unzip
+          opts:
+            - -o
+            - latest.zip
