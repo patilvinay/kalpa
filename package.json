@@ -1,6 +1,6 @@
 {
   "name": "kalpa",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Scaffolding tool",
   "main": "lib/kalpa/index.js",
   "scripts": {
