@@ -1,7 +1,7 @@
 {
   "name": "kalpa",
-  "version": "0.1.5",
-  "description": "Scaffolding tool",
+  "version": "0.1.8",
+  "description": "Descriptive language based Automation tool.",
   "main": "lib/kalpa/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
@@ -17,13 +17,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:patilvinay/kalpa.git"
+    "url": "https://github.com/patilvinay/kalpa.git"
   },
   "bin": {
     "kalpa": "./kalpa.js"
   },
   "keywords": [
-    "scaffolding",
+    "Descriptive language",
     "automation",
     "tool"
   ],
