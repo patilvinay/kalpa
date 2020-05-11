@@ -1,8 +1,19 @@
-language: node_js
-node_js:
-  - v14
-  - v12
-  - v10
-  - v8
-  - v6
-after_script: cat ./coverage/lcov.info | coveralls
+stages:
+  - build
+  - npm:publish
+
+jobs:
+  include:
+    - stage: build
+      language: node_js
+      node_js:
+        - node
+        - "lts/*"
+    - stage: npm:publish
+      language: node_js
+      node_js:
+        - v12
+      before_install: npm install
+      install: skip
+      script: npm run semantic-release
+      if: commit_message =~ /{{publish}}/

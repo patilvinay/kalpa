@@ -1,7 +1,12 @@
 {
   "name": "kalpa",
+<<<<<<< HEAD
   "version": "0.1.7",
   "description": "Scaffolding tool",
+=======
+  "version": "0.1.8",
+  "description": "Descriptive language based Automation tool.",
+>>>>>>> 91fcd3bb788bcd51a26ac2d2fea2b654afbc8970
   "main": "lib/kalpa/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
@@ -17,13 +22,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:patilvinay/kalpa.git"
+    "url": "https://github.com/patilvinay/kalpa.git"
   },
   "bin": {
     "kalpa": "./kalpa.js"
   },
   "keywords": [
-    "scaffolding",
+    "Descriptive language",
     "automation",
     "tool"
   ],
@@ -37,6 +42,7 @@
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
+    "@semantic-release/github": "^7.0.5",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
