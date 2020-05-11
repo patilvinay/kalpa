@@ -38,9 +38,9 @@
   },
   "devDependencies": {
     "@semantic-release/github": "^7.0.5",
-    "babel": "^6.23.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
+    "babel": "^7.0.0",
+    "babel-cli": "^7.0.0",
+    "babel-core": "^7.0.3",
     "babel-node": "0.0.1-security",
     "babel-preset-env": "^1.7.0",
     "eslint": "^6.8.0",
