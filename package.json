@@ -31,7 +31,14 @@
   "license": "Apache-2.0",
   "dependencies": {
     "commander": "^5.1.0",
+    "execa": "^4.0.1",
+    "kalpa-execa": "0.0.3",
+    "kalpa-file": "^0.1.2",
+    "kalpa-mustache": "^0.1.0",
+    "kalpa-scaffold": "^0.1.0",
+    "kalpa-simple-git": "0.0.2",
     "lodash": "^4.17.15",
+    "path": "^0.12.7",
     "signale": "^1.4.0",
     "winston": "^3.2.1",
     "yamljs": "^0.3.0"
@@ -83,5 +90,10 @@
     "underlinePrefix": false,
     "underlineSuffix": false,
     "uppercaseLabel": false
-  }
+  },
+  "kalpa_modules": [
+    "kalpa-simple-git",
+    "kalpa-execa",
+    "kalpa-scaffold"
+  ]
 }
