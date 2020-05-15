@@ -7,7 +7,6 @@ const fs = require("fs");
 const execa = require("execa");
 const kalpa = require("./lib/kalpa");
 const Package = require("./package.json");
-// const program = new commander.Command();
 
 const kalpaFile = "kalpa.json";
 
@@ -82,9 +81,6 @@ program
 
       console.log(kalpaConfig.kalpa_modules);
     });
-
-    // console.log(execa.sync("npm", ["install", "-S"], opkgs));
-    // console.log(execa.sync("pwd"));
   });
 
 program.parse(process.argv);
