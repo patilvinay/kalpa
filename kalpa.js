@@ -11,28 +11,14 @@ const Package = require("./package.json");
 const kalpaFile = "kalpa.json";
 
 program.arguments("<filename>").action(function (cmd, env) {
-  const playbook = {};
-  const globalData = {};
-  // eslint-disable-next-line no-underscore-dangle
-  playbook.__data = {};
-  globalData.playbookDir = path.resolve(".");
-  globalData.playbookFile = cmd;
-  try {
-    globalData.playbookFileWitAbsolutePath = path.join(
-      globalData.playbookDir,
-      cmd
-    );
-    playbook.rootData = yaml.load(globalData.playbookFileWitAbsolutePath);
-  } catch (err) {
-    kalpa.logger.error("Error loading file %s", globalData.playbookFile);
-    kalpa.logger.error(err.code);
-    return 1;
-  }
-
-  return kalpa.process(playbook, globalData);
+  const cwd = path.resolve(".");
+  const playbookFileWitAbsolutePath = path.join(cwd, cmd);
+  return kalpa.processFile(playbookFileWitAbsolutePath);
 });
 
 program.version(Package.version);
+
+
 program
   .command("play <playBook>")
   .description("Play-book yaml")
@@ -42,6 +28,8 @@ program
   });
 
 let kalpaConfig = {};
+
+
 program
   .command("install [other-pkg...]")
   .description("install kalpa package")
@@ -68,6 +56,7 @@ program
       console.log(err.stderr);
     }
   });
+
 program
   .command("list")
   .description("List installed kalpa modules")
