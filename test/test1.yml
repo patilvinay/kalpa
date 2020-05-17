@@ -1,0 +1,47 @@
+---
+kalpa:
+  import:
+      propB:
+        ref: vars.prop
+        file: import.yaml
+        directory: ./
+      propA:
+        ref: vars.properties
+        file: entity.yml
+        directory: "./"
+  vars:
+      prop:
+        name: AdminID
+        size: 8
+        notnull: true
+      name: "{{ imported.propA.ID.type|dump }}"
+      name: "hello"
+      nameA: "{{ vars.name|dump }}"
+      nameB: "{{ vars.nameA|dump }}"
+      nameC: "{{ vars.nameB|dump }}"
+      nameD: "{{ vars.nameC|dump }}"
+      nameE: "{{vars.properties.name|dump }}"
+      properties:
+        name: ID
+        type: "hello" #hello
+        size: 8
+        unsigned: true
+        primary: true
+        minmum: 0
+        maximum: 99999999999999
+      request:
+        - name: Business.get
+          body:
+            - name: AdminID
+              required: true
+              property: "{{ vars.prop|dump }}"
+            - name: "{{ vars.prop.name|dump }}"
+            - name: "{{ vars.name|dump }}"
+          properties: "{{ vars.properties|dump }}"
+  play:
+    - name: "{{ vars.prop.name|dump }}"
+      kalpa-scaffold:
+        vars:
+          dest: model.js
+          template: ./templates/sequelizeModel.ejs.js
+          renderer: "{{ vars.prop.name|dump }}"

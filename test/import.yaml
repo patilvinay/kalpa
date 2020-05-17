@@ -1,0 +1,6 @@
+kalpa:
+  vars:
+    prop:
+      name: AdminID
+      size: 8
+      notnull: true
