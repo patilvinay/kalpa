@@ -43,6 +43,7 @@
     "nunjucks": "^3.2.1",
     "path": "^0.12.7",
     "signale": "^1.4.0",
+    "tracer": "^1.1.1",
     "winston": "^3.2.1",
     "yaml-syntax": "0.0.0",
     "yamljs": "^0.3.0"
