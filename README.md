@@ -1,14 +1,13 @@
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![License][apache-image]][apache-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![License][apache-image]][apache-url] [![semantic-release][semantic-release-image]][semantic-release-url]
 
-# Kalpa (WIP)
+# Kalpa 
 
 Automation Tool, programmed through descriptive yml language,
 
 ## Getting started
 
-1. npm install kalpa -g
-2. npm install kalpa-execa -g
-3. kalpa <playbook.yml>
+1. npm install kalpa kalpa-execa -g
+2. kalpa <playbook.yml>
 
 ### example playbook.yml
 
@@ -54,3 +53,5 @@ kalpa:
 [coveralls-url]: https://coveralls.io/r/patilvinay/kalpa
 [apache-image]: https://img.shields.io/badge/License-Apache%202.0-blue.svg
 [apache-url]: https://opensource.org/licenses/Apache-2.0
+[semantic-release-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-release-url]: https://github.com/semantic-release/semantic-release
