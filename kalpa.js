@@ -63,7 +63,6 @@ program
   .alias("i")
   .action((name) => {
     fs.access(kalpaFile, fs.constants.F_OK, (err) => {
-      // console.log(`${kalpaFile} ${err ? 'does not exist' : 'exists'}`);
       if (!err) {
         kalpaConfig = JSON.parse(fs.readFileSync("kalpa.json", "utf8"));
       }
