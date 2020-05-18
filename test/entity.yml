@@ -1,0 +1,62 @@
+#Entity Business
+kalpa:
+  import:
+    type:
+      ref: vars.Types
+      file: types.yml
+      directory: ./
+
+  vars:
+    properties:
+      ID:
+        type: "{{ imported.type.Integer|dump }}"
+        size: 8
+        unsigned: true
+        primary: true
+        minmum: 0
+        maximum: 99999999999999
+
+      AdminID:
+        type: "{{ imported.type.Integer|dump }}"
+        size: 8
+        notnull: true
+
+      GSTIN:
+        type: "{{ imported.type.String|dump }}"
+        len: 15
+
+      CIN:
+        type: "{{ imported.type.String|dump }}"
+        len: 20
+
+      ContactNumber:
+        type: "{{ imported.type.String|dump }}"
+        len: 10
+
+      FAX:
+        type: "{{ imported.type.String|dump }}"
+        len: 10
+
+      Address:
+        type: "{{ imported.type.String|dump }}"
+        len: 100
+
+      City:
+        type: "{{ imported.type.String|dump }}"
+        len: 20
+
+      Pincode:
+        type: "{{ imported.type.String|dump }}"
+        len: 6
+
+      State:
+        type: "{{ imported.type.String|dump }}"
+        len: 20
+
+      Country:
+        type: "{{ imported.type.String|dump }}"
+        len: 20
+
+      MultiOutlet:
+        type: "{{ imported.type.Boolean|dump }}"
+        default: false

@@ -1,0 +1,9 @@
+kalpa:
+  vars:
+    Types:
+      Integer: INTEGER
+      String: STRING
+      Boolean: BOOLEAN
+      Float: FLOAT
+      True: TRUE
+      False: FALSE
