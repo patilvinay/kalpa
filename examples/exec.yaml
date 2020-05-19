@@ -1,5 +1,5 @@
 kalpa:
-  - play:
+   play:
       - name: Create a file foo.txt
         kalpa-execa:
           cmd: touch

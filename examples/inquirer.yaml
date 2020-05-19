@@ -1,5 +1,5 @@
 kalpa:
-  - play:
+   play:
       - name: Getting answers using inquirer
         kalpa-inquirer:
           ask:
@@ -38,7 +38,7 @@ kalpa:
               mask: '*'
 
             - type: expand
-              message: Conflict on `file.js`:
+              message: "Conflict on `file.js`"
               name: overwrite
               choices:
                 - key: y
