@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const program = require("commander");
-const yaml = require("yamljs");
 const path = require("path");
 const fs = require("fs");
 const execa = require("execa");
@@ -12,7 +11,7 @@ let kalpaConfigFile = "kalpa.json";
 kalpaConfigFile = path.join(__dirname, kalpaConfigFile);
 let kalpaConfig = {};
 
-program.arguments("<filename>").action(function (cmd, env) {
+program.arguments("<filename>").action(function (cmd) {
   const cwd = path.resolve(".");
   const playbookFileWitAbsolutePath = path.join(cwd, cmd);
   return kalpa.processFile(playbookFileWitAbsolutePath);
@@ -20,15 +19,13 @@ program.arguments("<filename>").action(function (cmd, env) {
 
 program.version(Package.version);
 
-
 program
   .command("play <playBook>")
   .description("Play-book yaml")
   .alias("p")
-  .action((name) => {
+  .action(() => {
     console.log("inside command run");
   });
-
 
 program
   .command("install [other-pkg...]")
@@ -36,8 +33,9 @@ program
   .alias("i")
   .action((opkgs) => {
     try {
-      let result = execa.sync("npm", ["install", "-S", ...opkgs, "--only=prod"]);
-      result = execa.sync("npm", ["install", "--only=prod"]);
+      execa.sync("npm", ["install", "-S", ...opkgs, "--only=prod"], {
+        cwd: __dirname
+      });
 
       // Check if the file exists in the current directory.
       try {
@@ -61,11 +59,11 @@ program
   .command("list")
   .description("List installed kalpa modules")
   .alias("i")
-  .action((name) => {
+  .action(() => {
     fs.access(kalpaConfigFile, fs.constants.F_OK, (err) => {
       if (!err) {
         kalpaConfig = JSON.parse(fs.readFileSync(kalpaConfigFile, "utf8"));
-        console.log(kalpaConfig.kalpa_modules)
+        console.log(kalpaConfig.kalpa_modules);
       }
     });
   });
