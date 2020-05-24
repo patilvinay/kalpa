@@ -65,6 +65,7 @@ program
     fs.access(kalpaConfigFile, fs.constants.F_OK, (err) => {
       if (!err) {
         kalpaConfig = JSON.parse(fs.readFileSync(kalpaConfigFile, "utf8"));
+        console.log(kalpaConfig.kalpa_modules)
       }
     });
   });
