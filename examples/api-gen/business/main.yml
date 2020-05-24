@@ -1,0 +1,55 @@
+preplay:
+  renderer: jinja2
+kalpa:
+  import:
+    entity:
+      file: entity.yml
+      ref: vars
+      directory: ./
+    routes:
+      file: routes.yml
+      ref: vars
+      directory: ./
+    config:
+      file: config.yml
+      ref: vars
+      directory: ../
+  vars:
+    outDir: "{{ imported.config.outputDir }}/business"
+
+  play:
+    - name: Create Dir
+      kalpa-file:
+        action: mkdir
+        dir: "{{ vars.outDir }}"
+
+    - name: "Generate models for {{ imported.routes.Module }} Module"
+      kalpa-ejs:
+        vars:
+          dest: "{{ vars.outDir }}/model.js"
+          template: ./templates/SequelizeModel.ejs.js
+          renderer: kalpa-ejs
+    - name: "Generate controller for {{ imported.routes.Module }} Module"
+      kalpa-ejs:
+        vars:
+          dest: "{{ vars.outDir }}/contorller.js"
+          template: ./templates/SequelizeModel.ejs.js
+          renderer: kalpa-ejs
+    - name: "Generate schema for {{ imported.routes.Module }} Module"
+      kalpa-ejs:
+        vars:
+          dest: "{{ vars.outDir }}/schema.js"
+          template: ./templates/SequelizeModel.ejs.js
+          renderer: kalpa-ejs
+    - name: "Generate validate for {{ imported.routes.Module }} Module"
+      kalpa-ejs:
+        vars:
+          dest: "{{ vars.outDir }}/validate.js"
+          template: ./templates/SequelizeModel.ejs.js
+          renderer: kalpa-ejs
+    - name: "Generate docs for {{ imported.routes.Module }} Module"
+      kalpa-ejs:
+        vars:
+          dest: "{{ vars.outDir }}/readme.md"
+          template: ./templates/SequelizeModel.ejs.js
+          renderer: kalpa-ejs

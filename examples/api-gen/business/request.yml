@@ -1,0 +1,148 @@
+kalpa:
+  import:
+    entity:
+      file: entity.yml
+      ref: vars.properties
+      directory: ./
+    type:
+      ref: vars.Types
+      file: types.yml
+      directory: ../types
+  vars:
+    request:
+      Business_get:
+        body:
+          ID:
+            required: false
+            property: "{{- imported.entity.ID|dump -}}"
+
+          AdminID:
+            required: true
+            property: "{{- imported.entity.AdminID|dump -}}"
+
+        header:
+          access-token:
+            type: "{{- imported.type.String|dump -}}"
+            len: 200
+
+          content-type:
+            match: "application/json"
+
+      Business_post:
+        body:
+          AdminID:
+            required: true
+            property: "{{- imported.entity.AdminID|dump -}}"
+
+          GSTIN:
+            required: true
+            property: "{{- imported.entity.GSTIN|dump -}}"
+          CIN:
+            required: false
+            property: "{{- imported.entity.CIN|dump -}}"
+
+          ContactNumber:
+            required: true
+            property: "{{- imported.entity.ContactNumber|dump -}}"
+          FAX:
+            required: false
+            property: "{{- imported.entity.FAX|dump -}}"
+
+          Address:
+            required: true
+            property: "{{- imported.entity.Address|dump -}}"
+          City:
+            required: true
+            property: "{{- imported.entity.City|dump -}}"
+
+          Pincode:
+            required: true
+            property: "{{- imported.entity.Pincode|dump -}}"
+
+          State:
+            required: true
+            property: "{{- imported.entity.State|dump -}}"
+          Country:
+            required: true
+            property: "{{- imported.entity.Country|dump -}}"
+
+          MultiOutlet:
+            required: true
+            property: "{{- imported.entity.MultiOutlet|dump -}}"
+
+        header:
+          access-token:
+            type: "{{- imported.type.String|dump -}}"
+            len: 200
+
+          content-type:
+            match: "application/json"
+
+      Business_patch:
+        body:
+          ID:
+            required: true
+            property: "{{- imported.entity.ID|dump -}}"
+
+          AdminID:
+            required: true
+            property: "{{- imported.entity.AdminID|dump -}}"
+
+          GSTIN:
+            required: true
+            property: "{{- imported.entity.GSTIN|dump -}}"
+          CIN:
+            required: false
+            property: "{{- imported.entity.CIN|dump -}}"
+
+          ContactNumber:
+            required: true
+            property: "{{- imported.entity.ContactNumber|dump -}}"
+
+          FAX:
+            required: false
+            property: "{{- imported.entity.FAX|dump -}}"
+          Address:
+            required: true
+            property: "{{- imported.entity.Address|dump -}}"
+
+          City:
+            required: true
+            property: "{{- imported.entity.City|dump -}}"
+          Pincode:
+            required: true
+            property: "{{- imported.entity.Pincode|dump -}}"
+          State:
+            required: true
+            property: "{{- imported.entity.State|dump -}}"
+          Country:
+            required: true
+            property: "{{- imported.entity.Country|dump -}}"
+
+          MultiOutlet:
+            required: true
+            property: "{{- imported.entity.MultiOutlet|dump -}}"
+        header:
+          access-token:
+            type: "{{- imported.type.String|dump -}}"
+            len: 200
+
+          content-type:
+            match: "application/json"
+
+      Business_delete:
+        body:
+          ID:
+            required: true
+            property: "{{- imported.entity.ID|dump -}}"
+
+          AdminID:
+            required: true
+            property: "{{- imported.entity.AdminID|dump -}}"
+        header:
+          access-token:
+            type: "{{- imported.type.String|dump -}}"
+            len: 200
+
+          content-type:
+            match: "application/json"

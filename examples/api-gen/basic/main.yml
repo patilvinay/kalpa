@@ -1,0 +1,24 @@
+preplay:
+  renderer: jinja2
+kalpa:
+  import:
+    # This imports var section the config.yml as config
+    config:
+      file: config.yml
+      ref: vars
+      directory: ../
+  vars:
+    repoName: kalpa-npm
+
+  play:
+    - name: Create Dir
+      kalpa-file:
+        action: mkdir
+        dir: "{{ imported.config.outputDir }}"
+      #  mode: 0
+    # - name: Creating github repo {{ vars.repoName }}
+    #   kalpa-github:
+    #     desc: "This is the test repo"
+    #     name: "{{ vars.repoName }}"
+    #     action: create
+    #     token: "{{ imported.config.gitconfig.token}}"

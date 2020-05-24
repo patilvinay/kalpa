@@ -1,0 +1,11 @@
+kalpa:
+  vars:
+    Types:
+      Integer: INTEGER
+      String: STRING
+      Boolean: BOOLEAN
+      Float: FLOAT
+
+    Define:
+      true: TRUE
+      false: FALSE

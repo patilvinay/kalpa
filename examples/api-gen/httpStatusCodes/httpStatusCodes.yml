@@ -1,0 +1,26 @@
+kalpa:
+  vars:
+    HTTPStatusCodes:
+     SUCCESS:
+        Code: 200
+        message: "Sucess"
+
+     CREATED: 
+        Code: 201
+        message: "Created"
+
+     NOCONTENT: 
+         Code: 204
+         message: "NO Content"
+
+     BADREQUEST:
+        code: 400
+        message: "bad requrest"
+
+     UNAUTHORIZED: 
+        code: 401
+        message: "Access denied"
+
+     FORBIDDEN:
+        code: 400
+        message: "forbidded"

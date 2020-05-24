@@ -1,0 +1,12 @@
+kalpa:
+  # import:
+  # gitconfig:
+  #   file: github.yml
+  #   ref: vars
+  #   directory: ../../../.config/
+  vars:
+    outputDir: "out"
+    appName: "express-Api"
+    Author: "Vinay.hpatil@gmail.com"
+    License: "Apache-2.0"
+    #gitconfig: "{{- imported.gitconfig|dump -}}"

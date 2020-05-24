@@ -1,0 +1,36 @@
+kalpa:
+  import:
+    httpstatus:
+      file: httpStatusCodes.yml
+      ref: vars.HTTPStatusCodes
+      directory: ../httpStatusCodes
+  vars:
+    response:
+      Business_get:
+        - "{{- imported.httpstatus.SUCCESS|dump -}}"
+        - "{{- imported.httpstatus.CREATED|dump -}}"
+        - "{{- imported.httpstatus.NOCONTENT|dump -}}"
+        - "{{- imported.httpstatus.BADREQUEST|dump -}}"
+        - "{{- imported.httpstatus.UNAUTHORIZED|dump -}}"
+        - "{{- imported.httpstatus.FORBIDDEN|dump -}}"
+      Business_post:
+        - "{{- imported.httpstatus.SUCCESS|dump -}}"
+        - "{{- imported.httpstatus.CREATED|dump -}}"
+        - "{{- imported.httpstatus.NOCONTENT|dump -}}"
+        - "{{- imported.httpstatus.BADREQUEST|dump -}}"
+        - "{{- imported.httpstatus.UNAUTHORIZED|dump -}}"
+        - "{{- imported.httpstatus.FORBIDDEN|dump -}}"
+      Business_patch:
+        - "{{- imported.httpstatus.SUCCESS|dump -}}"
+        - "{{- imported.httpstatus.CREATED|dump -}}"
+        - "{{- imported.httpstatus.NOCONTENT|dump -}}"
+        - "{{- imported.httpstatus.BADREQUEST|dump -}}"
+        - "{{- imported.httpstatus.UNAUTHORIZED|dump -}}"
+        - "{{- imported.httpstatus.FORBIDDEN|dump -}}"
+      Business_delete:
+        - "{{- imported.httpstatus.SUCCESS|dump -}}"
+        - "{{- imported.httpstatus.CREATED|dump -}}"
+        - "{{- imported.httpstatus.NOCONTENT|dump -}}"
+        - "{{- imported.httpstatus.BADREQUEST|dump -}}"
+        - "{{- imported.httpstatus.UNAUTHORIZED|dump -}}"
+        - "{{- imported.httpstatus.FORBIDDEN|dump -}}"

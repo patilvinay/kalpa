@@ -1,0 +1,26 @@
+preplay:
+  renderer: jinja2
+kalpa:
+  # import:
+  #   config:
+  #     file: .config.yml
+  #     ref: vars
+  #     directory: ./
+
+  series:
+    #- basic
+    - business
+  play:
+    #Generating business entity
+    #   kalpa-ejs:
+    #     src: './spec/business/"{{ vars.test.name|dump }}'
+    #     dest: businessModel.js
+    #     template: ./templates/sequelizeModel.ejs.js
+    #     dir: models
+    # #    when: "PlayEnable == true"
+    #Downloading a file
+    #   kalpa-execa:
+    #     cmd: curl
+    #     opts:
+    #       - https://wordpress.org/latest.zip
+    #       - -olatest.zip

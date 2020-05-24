@@ -1,0 +1,42 @@
+kalpa:
+  import:
+    request:
+      file: request.yml
+      ref: vars.request
+      directory: ./
+    response:
+      file: response.yml
+      ref: vars.response
+      directory: ./
+  vars:
+    Module: Business
+    routes:
+      - path: /
+        methods:
+          - type: get
+            title: Lists the entitled Business
+            descreption: Lists the entitled Business (in detail)
+            request: "{{- imported.request.Business_get|dump -}}"
+            respones: "{{- imported.response.Business_get|dump -}}"
+            format:
+              - json
+              - grpc
+            protected: yes
+          - type: patch
+            title: Business update
+            descreption: Updation of Business details
+            request: "{{- imported.request.Business_patch|dump -}}"
+            respones: "{{- imported.response.Business_patch|dump -}}"
+            format:
+              - json
+              - grpc
+            protected: yes
+          - type: delete
+            title: Business deletion
+            descreption: Deletion of Business
+            request: "{{- imported.request.Business_delete|dump -}}"
+            respones: "{{- imported.response.Business_delete|dump -}}"
+            format:
+              - json
+              - grpc
+            protected: yes
