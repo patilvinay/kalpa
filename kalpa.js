@@ -8,7 +8,9 @@ const execa = require("execa");
 const kalpa = require("./lib/kalpa");
 const Package = require("./package.json");
 
-const kalpaFile = "kalpa.json";
+let kalpaConfigFile = "kalpa.json";
+kalpaConfigFile = path.join(__dirname, kalpaConfigFile);
+let kalpaConfig = {};
 
 program.arguments("<filename>").action(function (cmd, env) {
   const cwd = path.resolve(".");
@@ -27,8 +29,6 @@ program
     console.log("inside command run");
   });
 
-let kalpaConfig = {};
-
 
 program
   .command("install [other-pkg...]")
@@ -36,13 +36,13 @@ program
   .alias("i")
   .action((opkgs) => {
     try {
-      const result = execa.sync("npm", ["install", "-S", ...opkgs]);
-      console.log(result.stdout);
+      let result = execa.sync("npm", ["install", "-S", ...opkgs, "--only=prod"]);
+      result = execa.sync("npm", ["install", "--only=prod"]);
 
       // Check if the file exists in the current directory.
       try {
-        fs.accessSync(kalpaFile, fs.constants.F_OK);
-        kalpaConfig = JSON.parse(fs.readFileSync("kalpa.json", "utf8"));
+        fs.accessSync(kalpaConfigFile, fs.constants.F_OK);
+        kalpaConfig = JSON.parse(fs.readFileSync(kalpaConfigFile, "utf8"));
         console.log(kalpaConfig);
       } catch (err) {}
 
@@ -51,7 +51,7 @@ program
       } else {
         kalpaConfig.kalpa_modules = [...opkgs, ...kalpaConfig.kalpa_modules];
       }
-      const res = fs.writeFileSync(kalpaFile, JSON.stringify(kalpaConfig));
+      const res = fs.writeFileSync(kalpaConfigFile, JSON.stringify(kalpaConfig));
     } catch (err) {
       console.log(err.stderr);
     }
@@ -62,12 +62,10 @@ program
   .description("List installed kalpa modules")
   .alias("i")
   .action((name) => {
-    fs.access(kalpaFile, fs.constants.F_OK, (err) => {
+    fs.access(kalpaConfigFile, fs.constants.F_OK, (err) => {
       if (!err) {
-        kalpaConfig = JSON.parse(fs.readFileSync("kalpa.json", "utf8"));
+        kalpaConfig = JSON.parse(fs.readFileSync(kalpaConfigFile, "utf8"));
       }
-
-      console.log(kalpaConfig.kalpa_modules);
     });
   });
 
