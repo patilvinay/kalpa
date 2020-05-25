@@ -6,9 +6,11 @@ Automation Tool, programmed through descriptive yml language,
 
 ## Getting started
 
-1. npm install kalpa -g
-2. kalpa install kalpa-execa kalpa-file kalpa-ejs kalpa-inquirer
-3. kalpa <playbook.yml>
+```sh
+$ npm install kalpa -g
+$ kalpa install kalpa-execa kalpa-file kalpa-ejs kalpa-inquirer
+$ kalpa <playbook.yml>
+```
 
 ### example playbook.yml
 
