@@ -41,8 +41,8 @@ Currently some modules that are in development are available are
   - plays are set of instruction that are executed by kalpa
   - series are plays refactored in to directory and can be group of plays
   - Each play uses kalpa modules to execute certain set of instructions
-- Each kalpa module can have it own variable
-- Module can import other yml files as imported variables
+- Each playbook can have it's own variables an
+- Playbook can import other yml files as imported variables
 
 ### Example playbook ( Just to explain. Will not run out of box )
 
