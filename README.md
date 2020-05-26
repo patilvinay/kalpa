@@ -8,12 +8,12 @@ Automation Tool, programmed through descriptive yml language. It is similar to A
 
 Kalpa can do whole lot of things for you, like
 
-- Create a directory for you, download a file zip file in it and unzip it.
+- Create a directory for you, download some zip file in it and unzip it.
 - Code generation based on ejs templates
 - Create a github repo for you
 - Publish a apk on google play store
 
-Currently some modules that are in development are available are
+Currently some modules that are in development are( Can be used, has some basic functionality ready)
 
 - kalpa-execa (shell module)
   - This module execute a shell command
