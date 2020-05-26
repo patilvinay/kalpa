@@ -38,11 +38,11 @@ Currently some modules that are in development are available are
 - Kalpa project provides a cli by name 'kalpa' which take a series of instruction in yml
 - A yml file is called playbook
 - Each playbook in turns has plays and series
-  - plays are set of instruction that are executed by kalpa
-  - series are plays refactored in to directory and can be group of plays
-  - Each play uses kalpa modules to execute certain set of instructions
-- Each playbook can have it's own variables an
-- Playbook can import other yml files as imported variables
+  - plays are set of instruction that are executed by kalpa.
+  - series are plays refactored in to directory and can be group of plays.
+  - Each play uses kalpa modules to execute certain set of instructions.
+- Each playbook can have it's own variables.
+- Playbook can import other yml files as imported variables.
 
 ### Example playbook ( Just to explain. Will not run out of box )
 
@@ -65,7 +65,7 @@ kalpa:
       kalpa-execa:
         cmd: curl
         opts:
-          - "https://wordpress.org/{{ vars.fileName }}.zip"
+          - "https://wordpress.org/{{ vars.fileName }}"
           - "-o{{vars.fileName}}"
 ```
 
