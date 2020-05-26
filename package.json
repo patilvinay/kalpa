@@ -1,6 +1,6 @@
 {
   "name": "kalpa",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Descriptive language based Automation tool.",
   "main": "lib/kalpa/index.js",
   "scripts": {
