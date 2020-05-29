@@ -1,0 +1,36 @@
+#!/usr/bin/env kalpa
+kalpa:
+  vars:
+    create : true
+   # Args: "{{args[0]}}"
+    file: 
+      - "hi.txt"
+      - "hellow.txt"
+
+  play:
+    - name: "{{item}}"
+      kalpa-execa:
+        cmd: "touch"
+        opts:
+           - "{{item}}"
+      if: false
+      loop:
+       - "foo.txt"
+       - "foo1.txt"
+       - "foo2.txt"
+
+    - name: "This is the task {{item}}"
+      kalpa-execa:
+        cmd: "touch"
+        opts:
+           - "{{item}}"
+      if: "args !== undefined"
+      loop: "{{- args|dump -}}"
+
+    - name: "foo.txt"
+      kalpa-execa:
+        cmd: "touch"
+        opts:
+           - "foo.txt"
+      if: true
+
