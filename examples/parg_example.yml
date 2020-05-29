@@ -1,0 +1,36 @@
+#!/usr/bin/env kalpa
+kalpa:
+  vars:
+    create : true
+    Arg: "{{args[0]}}"
+
+  play:
+    - name: "{{args}}"
+      kalpa-execa:
+        cmd: "touch"
+        opts:
+           - "foo.txt"
+      if: true
+
+    - name: "{{args[0]}}"
+      kalpa-execa:
+        cmd: "touch"
+        opts:
+          - "foo.txt"
+      if: "{{vars.create}} === true"
+
+    - name: "{{args}}"
+      kalpa-execa:
+        cmd: "touch"
+        opts:
+          - "{{ args[0]}}"
+      if : "args[0]!== undefined"
+
+    - name: "{{args}}"
+      kalpa-execa:
+        cmd: "touch"
+        opts:
+          - "{{ args[0]}}"
+      if : false
+
+ 
