@@ -35,3 +35,9 @@ kalpa:
       debug:
            - "hello world"
            - "hello {{args[0]}}"
+    - debug:
+      - "variable value is {{< vars.x >}}"
+      
+    - name: "test debug module"
+      debug:
+      - "variable value is {{< vars.x >}}"
