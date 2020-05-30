@@ -16,8 +16,16 @@ program.arguments("<filename>")
 .action(function (cmd) {
   const cwd = path.resolve(".");
   const playbookFileWitAbsolutePath = path.join(cwd, cmd);
-  return kalpa.processFile(playbookFileWitAbsolutePath, undefined, program.pargs);
+  const ctx = prepareContext();
+  return kalpa.processFile(playbookFileWitAbsolutePath, ctx, program.pargs);
 });
+
+const prepareContext = () => {
+    let ctx = {};
+    ctx.dump = program.dump ? true : false;
+    ctx.debug = program.debug ? true : false;
+    return ctx
+}
 
 function collect(value, previous) {
     return previous.concat([value]);
@@ -25,7 +33,10 @@ function collect(value, previous) {
 
 program.version(Package.version);
 program
-    .option('-a, --pargs <value>', 'arguments to be passed to playbook', collect, [])
+    .option('-a, --pargs <value>', 'Arguments to be passed to playbook', collect, [])
+    .option('-d, --dump', 'Enable playbook rendered file dump')
+    .option('-D, --debug', 'Enable playbook rendered file dump')
+
 program
   .command("play <playBook>")
   .description("Play-book yaml")
