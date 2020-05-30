@@ -8,12 +8,12 @@ kalpa:
       - "hellow.txt"
 
   play:
-    - name: "{{item}}"
+    - name: "{{< item >}}"
       kalpa-execa:
         cmd: "touch"
         opts:
-           - "{{item}}"
-      if: false
+           - "{{< item >}}"
+      if: true
       loop:
        - "foo.txt"
        - "foo1.txt"
@@ -33,4 +33,16 @@ kalpa:
         opts:
            - "foo.txt"
       if: true
+
+    - name: "hello {{<item.directory>}}{{< item.file >}}"
+      kalpa-execa:
+        cmd: "touch"
+        opts:
+           - "{{<item.directory>}}{{< item.file >}}"
+      # if: true
+      loop:
+       - file: 'file.txt'
+         directory: './'
+       - file: 'file1.txt'
+         directory: './'
 
