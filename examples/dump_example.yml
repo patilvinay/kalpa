@@ -78,12 +78,12 @@ kalpa:
         opts:
            - "foo.txt"
       loop:
-        - temp: " {{- vars|dump -}}"
-        - "{{- vars|dump -}}{{- vars|dump -}}{{- vars|dump -}}"
-        - "{{- vars|dump -}} world{{- vars|dump -}}{{- vars|dump -}}"
-        - "{{- vars|dump -}}"
+        - temp: " {{ vars|dump }}"
+        - "{{ vars|dump }}{{ vars|dump }}{{ vars|dump }}"
+        - "{{ vars|dump }} world{{ vars|dump }}{{ vars|dump }}"
+        - "{{ vars|dump }}"
       debug:
-        - " {{- vars|dump -}}"
-        - "{{- vars|dump -}}{{- vars|dump -}}{{- vars|dump -}}"
-        - "{{- vars|dump -}} world{{- vars|dump -}}{{- vars|dump -}}"
-        - "{{- vars|dump -}}"
+        - " {{ vars|dump }}"
+        - "{{ vars|dump }}{{ vars|dump }}{{ vars|dump }}"
+        - "{{ vars|dump }} world{{ vars|dump }}{{ vars|dump }}"
+        - "{{ vars|dump }}"

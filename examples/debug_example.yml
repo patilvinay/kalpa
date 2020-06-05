@@ -27,12 +27,12 @@ kalpa:
       result: result
       
     - debug:
-      - "{{- vars|dump -}}"
-      - "hello {{- vars|dump -}}"
-      - "hello {{- vars|dump -}} end"
-      - "{{- vars|dump -}} end"
+      - "{{vars|dump}}"
+      - "hello {{vars|dump}}"
+      - "hello {{vars|dump}} end"
+      - "{{vars|dump}} end"
       - "{{ vars|dump }} end"
-      - "{{- vars|dump -}} end"
+      - "{{ vars|dump }} end"
       - "{{< results|dump >}} end"
       - "{{< results.result >}} end"
 
