@@ -14,7 +14,8 @@
     "lib/kalpa",
     "example",
     "index.js",
-    "kalpa.json"
+    "kalpa.json",
+    "kalpa.js"
   ],
   "repository": {
     "type": "git",
