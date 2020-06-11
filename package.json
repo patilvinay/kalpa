@@ -1,6 +1,6 @@
 {
   "name": "kalpa",
-  "version": "0.2.12",
+  "version": "0.2.14",
   "description": "Descriptive language based Automation tool.",
   "main": "lib/kalpa/index.js",
   "scripts": {
@@ -33,6 +33,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "commander": "^5.1.0",
+    "deasync": "^0.1.20",
     "execa": "^4.0.2",
     "json-to-pretty-yaml": "^1.2.2",
     "jsonfile": "^6.0.1",
