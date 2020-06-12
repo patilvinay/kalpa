@@ -10,67 +10,67 @@ kalpa:
     #   - "hellow.txt"
     # path: "{{env.HOME}}"
   play:
-    # - name: "hello "
-    #   kalpa-execa:
-    #     cmd: "touch"
-    #     opts:
-    #        - "{{<item.directory>}}{{< item.file >}}"
-    #   if: true
-    #   loop:
-    #    - file: 'file.txt'
-    #      directory: './'
-    #    - file: 'file1.txt'
-    #      directory: './'
-    #   debug:
-    #      - "hello {{< item|dump >}}"
-    #   result: result
-    #   resultStream: false
-    #   ignoreError: false
+    - name: "hello "
+      kalpa-execa:
+        cmd: "touch"
+        opts:
+           - "{{<item.directory>}}{{< item.file >}}"
+      if: true
+      loop:
+       - file: 'file.txt'
+         directory: './'
+       - file: 'file1.txt'
+         directory: './'
+      debug:
+         - "hello {{< item|dump >}}"
+      result: result
+      resultStream: false
+      ignoreError: false
     
-    # - name: Downloading a file
-    #   kalpa-execa:
-    #     cmd: curl
-    #     opts:
-    #       - https://wordpress.org/latest.zip
-    #       - -olatest.zip
-    #   resultStream: true
+    - name: Downloading a file
+      kalpa-execa:
+        cmd: curl
+        opts:
+          - https://wordpress.org/latest.zip
+          - -olatest.zip
+      resultStream: true
 
-    # - name: directory content
-    #   kalpa-execa:
-    #     cmd: ls
-    #     opts:
-    #       - '.'
-    #   resultStream: true
-      # ignoreError: false
+    - name: directory content
+      kalpa-execa:
+        cmd: ls
+        opts:
+          - '.'
+      resultStream: true
+      ignoreError: false
 
-    # - name: directory content
-    #   kalpa-execa:
-    #     cmd: ls
-    #     opts:
-    #       - '.'
-    #   resultStream: false
-    #   ignoreError: false
+    - name: directory content
+      kalpa-execa:
+        cmd: ls
+        opts:
+          - '.'
+      resultStream: false
+      ignoreError: false
 
-    # - debug:
-    #   - "{{- vars|dump -}}"
-    #   - "hello {{- vars|dump -}}"
-    #   - "hello {{- vars|dump -}} end"
-    #   - "{{- vars|dump -}} end"
-    #   - "{{ vars|dump }} end"
-    #   - "{{- vars|dump -}} end"
-    #   - "{{< results|dump >}} end"
-    #   - "{{< results.result >}} end"
+    - debug:
+      - "{{- global.vars|dump -}}"
+      - "hello {{- global.vars|dump -}}"
+      - "hello {{- global.vars|dump -}} end"
+      - "{{- global.vars|dump -}} end"
+      - "{{ global.vars|dump }} end"
+      - "{{- global.vars|dump -}} end"
+      - "{{< results|dump >}} end"
+      - "{{< results.result >}} end"
 
-    # - name: "test debug module"
-    #   debug:
-    #   - "variable value is {{< vars.x >}}"
-    # - name: "This is the task {{item}}"
-    #   kalpa-execa:
-    #     cmd: "touch"
-    #     opts:
-    #        - "{{item}}"
-    #   if: "args !== undefined"
-    #   loop: "{{- args|dump -}}"
+    - name: "test debug module"
+      debug:
+      - "variable value is {{< global.vars.x >}}"
+    - name: "This is the task {{item}}"
+      kalpa-execa:
+        cmd: "touch"
+        opts:
+           - "{{item}}"
+      if: "args !== undefined"
+      loop: "{{- args|dump -}}"
 
     - name: "{{< item|dump >}}"
       kalpa-execa:
@@ -78,12 +78,12 @@ kalpa:
         opts:
            - "foo.txt"
       loop:
-        - temp: " {{ vars|dump }}"
-        - "{{ vars|dump }}{{ vars|dump }}{{ vars|dump }}"
-        - "{{ vars|dump }} world{{ vars|dump }}{{ vars|dump }}"
-        - "{{ vars|dump }}"
+        - temp: " {{ global.vars|dump }}"
+        - "{{ global.vars|dump }}{{ global.vars|dump }}{{ global.vars|dump }}"
+        - "{{ global.vars|dump }} world{{ global.vars|dump }}{{ global.vars|dump }}"
+        - "{{ global.vars|dump }}"
       debug:
-        - " {{ vars|dump }}"
-        - "{{ vars|dump }}{{ vars|dump }}{{ vars|dump }}"
-        - "{{ vars|dump }} world{{ vars|dump }}{{ vars|dump }}"
-        - "{{ vars|dump }}"
+        - " {{ global.vars|dump }}"
+        - "{{ global.vars|dump }}{{ global.vars|dump }}{{ global.vars|dump }}"
+        - "{{ global.vars|dump }} world{{ global.vars|dump }}{{ global.vars|dump }}"
+        - "{{ global.vars|dump }}"

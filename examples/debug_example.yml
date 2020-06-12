@@ -27,12 +27,12 @@ kalpa:
       result: result
       
     - debug:
-      - "{{vars|dump}}"
-      - "hello {{vars|dump}}"
-      - "hello {{vars|dump}} end"
-      - "{{vars|dump}} end"
-      - "{{ vars|dump }} end"
-      - "{{ vars|dump }} end"
+      - "{{global.vars|dump}}"
+      - "hello {{global.vars|dump}}"
+      - "hello {{global.vars|dump}} end"
+      - "{{global.vars|dump}} end"
+      - "{{ global.vars|dump }} end"
+      - "{{ global.vars|dump }} end"
       - "{{< results|dump >}} end"
       - "{{< results.result >}} end"
 
@@ -46,8 +46,8 @@ kalpa:
            - "hello {{args[0]}}"
            
     - debug:
-      - "variable value is {{< vars.x >}}"
+      - "variable value is {{< global.vars.x >}}"
       
     - name: "test debug module"
       debug:
-      - "variable value is {{< vars.x >}}"
+      - "variable value is {{< global.vars.x >}}"
