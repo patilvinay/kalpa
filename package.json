@@ -1,6 +1,6 @@
 {
   "name": "kalpa",
-  "version": "0.2.6",
+  "version": "0.2.14",
   "description": "Descriptive language based Automation tool.",
   "main": "lib/kalpa/index.js",
   "scripts": {
@@ -14,7 +14,8 @@
     "lib/kalpa",
     "example",
     "index.js",
-    "kalpa.json"
+    "kalpa.json",
+    "kalpa.js"
   ],
   "repository": {
     "type": "git",

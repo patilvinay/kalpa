@@ -11,25 +11,46 @@ let kalpaConfigFile = "kalpa.json";
 kalpaConfigFile = path.join(__dirname, kalpaConfigFile);
 let kalpaConfig = {};
 
-program.arguments("<filename>").action(function (cmd) {
+program.arguments("<filename>")
+.description("kalpa <playbook.yml>")
+.action(function (cmd) {
   const cwd = path.resolve(".");
   const playbookFileWitAbsolutePath = path.join(cwd, cmd);
-  return kalpa.processFile(playbookFileWitAbsolutePath);
+  const ctx = prepareContext();
+  return kalpa.processFile(playbookFileWitAbsolutePath, ctx, program.pargs);
 });
 
+const prepareContext = () => {
+    let ctx = {};
+    ctx.dump = program.dump ? true : false;
+    ctx.debug = program.debug ? true : false;
+    return ctx
+}
+
+function collect(value, previous) {
+    return previous.concat([value]);
+}
+
 program.version(Package.version);
+program
+    .option('-a, --pargs <value>', 'Arguments to be passed to playbook', collect, [])
+    .option('-d, --dump', 'Enable playbook rendered file dump')
+    .option('-D, --debug', 'Enable playbook rendered file dump')
 
 program
   .command("play <playBook>")
   .description("Play-book yaml")
   .alias("p")
-  .action(() => {
-    console.log("inside command run");
+  .action((cmd) => {
+    console.log("Inside command run");
+     const cwd = path.resolve(".");
+     const playbookFileWitAbsolutePath = path.join(cwd, cmd);
+     return kalpa.processFile(playbookFileWitAbsolutePath, undefined, program.pargs);
   });
 
 program
   .command("install [other-pkg...]")
-  .description("install kalpa package")
+  .description("Install kalpa package")
   .alias("i")
   .action((opkgs) => {
     try {
